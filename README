@@ -1,0 +1,49 @@
+"Wait Before Comment or Spam" a Wordpress plugin
+
+Haruka Kataoka (http://drumsoft.com/)
+
+次のうち、お好きな方法でインストールして下さい。
+- wbcos.zip を Wordpress 管理画面からアップロード
+- wbcos フォルダを Wordpress の wp-content/plugins/ フォルダにアップロード
+
+[概要]
+	コメントスパムを減らします。
+	このプラグインをインストールすると、ユーザはページをロードしてから
+	N秒間はコメントのポストができなくなります。(デフォルトで5秒間です)
+	注意: コメントのポストにJavascriptが必要になります。
+	
+	以下の理由で、コメントスパムを減らす効果があります。
+	1. スパマーのコメントスパムツールの殆どが、Javascriptをサポートしていない
+	2. スパマーは大量にスパムを投稿するために、N秒たりとも待つ事ができない
+	3. 通常のユーザはコメントを書くためにN秒以上はかかるので、このプラグインの
+	   影響を受けにくい
+
+[使い方]
+	1.	このプラグインをインストールします。
+	2.	wbcos.php 中の settings セクションの変数を設定して下さい。
+		(特に wbcos_secret1 と wbcos_secret2 を変更する必要があります)
+	3.	プラグインを有効化して下さい。
+	4.	wp-content/themes/YOURTHEMENAME/comments.php に以下のタグを追加します
+		<?php wbcos_echo_keys_field() ?>
+		タグは、 form タグの中に書いて下さい。
+	5.	コメントを試しにポストして、テストを行って下さい。
+
+
+ライセンス: GPL (2 or later)
+
+Wait Before Comment or Spam - a Wordpress plugin require users(or spammers) wait before each comments.
+Copyright (C) 2010 Haruka Kataoka
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
