@@ -61,12 +61,6 @@ $wbcos_waitmessage = "wait a moment..";
 
 $wbcos_callasresponder = array_key_exists('wbcos_request_challenge', $_GET);
 
-if (!$wbcos_callasresponder) {
-	$wbcos_url = get_settings('siteurl') . '/wp-content/plugins/wbcos/'; //the url of this plugin
-	$wbcos_js  = $wbcos_url . 'wbcos.js';
-	$wbcos_php = $wbcos_url . 'wbcos.php';
-}
-
 $wbcos_now = time();
 $wbcos_first = true;
 
@@ -74,9 +68,12 @@ $wbcos_first = true;
 function wbcos_echo_keys_field() {
 	global $wbcos_now;
 	global $wbcos_first;
-	global $wbcos_js;
-	global $wbcos_php;
 	global $wbcos_waitmessage;
+
+	$wbcos_url = plugins_url() . '/wbcos/'; //the url of this plugin
+	$wbcos_js  = $wbcos_url . 'wbcos.js';
+	$wbcos_php = $wbcos_url . 'wbcos.php';
+
 	echo '<input type="hidden" name="wbcos_comment_time" value="' . $wbcos_now . '">';
 	echo '<input type="hidden" name="wbcos_comment_challenge" value="' . wbcos_get_challenge($wbcos_now) . '">';
 	echo '<input type="hidden" name="wbcos_comment_response" value="">';
